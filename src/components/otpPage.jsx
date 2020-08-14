@@ -18,7 +18,7 @@ export default class otpPage extends PhoneNo {
             <div className="main">
                 <div className="header2">
                 
-                <h2>We've sent an activation code to your phone.please enter it</h2>
+                <h2>We've sent an activation code to your phone.Please enter it</h2>
                 </div>
                 <div className="i">
                     <input  className="input-otp" type="text"
