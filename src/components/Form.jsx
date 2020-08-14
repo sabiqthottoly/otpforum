@@ -1,97 +1,70 @@
 import React, { Component } from "react";
 import "./Form.css";
+import PhoneNo from './PhoneNo'
+import Otp from './otpPage'
 
 export default class form extends Component {
+  
   state = {
     phoneNumber: "",
     otp: "",
-    step: 1,
+    isPhoneNumber:true
   };
 
-  nextStep = () => {
-    
-    const { step } = this.state;
-    this.setState({
-      step: step + 1,
-    })
-    ;
-  };
-
-  prevStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1,
-    });
-  };
+  toggleForm = () => {
+    this.setState({ isPhoneNumber:!this.state.isPhoneNumber })
+  }
 
   storeInput = (event) => {
     this.setState({
-      [event.target.name]: event.target.value,
+        [event.target.name]: event.target.value,
     });
   };
 
   render() {
     const { step } = this.state;
-    const { phoneNumber, otp } = this.state;
+    const { phoneNumber, otp, isPhoneNumber } = this.state;
     const values = { phoneNumber };
 
-    //Phone Number Page
+      //Phone Number Page
+      if (isPhoneNumber) {
 
-    switch (step) {
-      case 1:
         return (
-          <div className="main">
-            <div className="header">
-              <h1>Your Phone Number</h1>
-              <h2>Please enter your mobile number</h2>
-            </div>
+          <PhoneNo
+            phoneNumber={this.state.phoneNumber}
+            toggleForm={ () => this.toggleForm() }
+            storeInput={this.storeInput}
+          />
+        )
+      } else {
+        return <Otp
+            otp={this.state.otp}
+            toggleForm={ () => this.toggleForm() }
+            storeInput={this.storeInput}
+         />
 
-            <div className="phonenumber">
-              <input
-                className="input"
-                type="text"
-                onChange={this.storeInput}
-                value={this.state.input}
-                name="phoneNumber"
-                maxLength="10"
-                placeholder="----------"
-              />
-            </div>
-
-            <div className="next">
-              <button className="btn" onClick={this.nextStep}>
-                NEXT
-              </button>
-              <h4>{this.state.phoneNumber}</h4>
-            </div>
-          </div>
-        );
-
-      //OTP page
-
-      case 2:
-        return (
-          <div className="main">
-            <div className="header2">
-              <h2>
-                We've sent an activation code to your phone.Please enter it
-              </h2>
-            </div>
-            <div className="i">
-              <input
-                className="input-otp"
-                type="text"
-                onChange={this.storeInput}
-                value={this.state.otp}
-                name="otp"
-                maxLength="6"
-                placeholder="------"
-              />
-              <button className="btn">NEXT</button>
-            </div>
-            <h4>{this.state.otp}</h4>
-          </div>
-        );
-    }
+      }
+        // return (
+        //   <div className="main">
+        //     <div className="header2">
+        //       <h2>
+        //         We've sent an activation code to your phone.Please enter it
+        //       </h2>
+        //     </div>
+        //     <div className="i">
+        //       <input
+        //         className="input-otp"
+        //         type="text"
+        //         onChange={this.storeInput}
+        //         value={this.state.otp}
+        //         name="otp"
+        //         maxLength="6"
+        //         placeholder="------"
+        //       />
+        //       <button className="btn">NEXT</button>
+        //     </div>
+        //     <h4>{this.state.otp}</h4>
+        //   </div>
+        // );
   }
 }
