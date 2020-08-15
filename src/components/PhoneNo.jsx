@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 //import {Link}  from 'react-router-dom';
-import './PhoneNo.css';
+//import './PhoneNo.css';
 import {Button} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
+const buttonStyle = { }
+ 
 export default class PhoneNo extends Component {
    
     
@@ -14,8 +17,8 @@ export default class PhoneNo extends Component {
             
             <div className="main">
                 <div className="header">
-                    <h1>Your Phone Number</h1>
-                    <h2>Please enter your  mobile number</h2>
+                    <h4>Your Phone Number</h4>
+                    <h7>Please enter your  mobile number</h7>
                 </div>
 
                 <div className="phonenumber">
@@ -26,12 +29,12 @@ export default class PhoneNo extends Component {
                         value={this.props.phoneNumber}
                         name="phoneNumber"
                         maxLength="14"
-                        placeholder="----------"
+                        placeholder=" "
                     />
                 </div>
-                <div className="next">
+                <div className="next phoneNumber">
 
-                <Button color="primary"  onClick={this.props.toggleForm}>NEXT</Button>{' '}
+                <Button style={buttonStyle} className="buttonNext" color="primary"  onClick={this.props.nextPage}>NEXT</Button>{' '}
                 
                 </div>
                 

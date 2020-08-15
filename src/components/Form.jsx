@@ -1,24 +1,24 @@
 import React, { Component } from "react";
-import "./Form.css";
 import PhoneNo from './PhoneNo'
 import Otp from './otpPage'
 
 export default class form extends Component {
   
   state = {
-    phoneNumber: "",
+    phoneNumber: "+91 ",
     otp: "",
-    isPhoneNumber:true
+    step:1
   };
 
-  toggleForm = () => {
-    this.setState({ isPhoneNumber:!this.state.isPhoneNumber })
+  nextPage = () => {
+    this.setState({ step:this.state.step + 1 })
   }
 
   storeInput = (event) => {
     this.setState({
         [event.target.name]: event.target.value,
     });
+    console.log(this.state.phoneNumber)
   };
 
   render() {
@@ -27,44 +27,27 @@ export default class form extends Component {
     const values = { phoneNumber };
 
       //Phone Number Page
-      if (isPhoneNumber) {
+      switch(step){
+       case 1 : 
+       
 
         return (
           <PhoneNo
             phoneNumber={this.state.phoneNumber}
-            toggleForm={ () => this.toggleForm() }
+            nextPage={ () => this.nextPage() }
             storeInput={this.storeInput}
           />
         )
-      } else {
+      //otp page
+      case 2:
         return <Otp
             otp={this.state.otp}
-            toggleForm={ () => this.toggleForm() }
+            nextPage={ () => this.nextPage() }
             storeInput={this.storeInput}
+            phoneNumber={this.state.phoneNumber}
          />
 
       }
-        // return (
-        //   <div className="main">
-        //     <div className="header2">
-        //       <h2>
-        //         We've sent an activation code to your phone.Please enter it
-        //       </h2>
-        //     </div>
-        //     <div className="i">
-        //       <input
-        //         className="input-otp"
-        //         type="text"
-        //         onChange={this.storeInput}
-        //         value={this.state.otp}
-        //         name="otp"
-        //         maxLength="6"
-        //         placeholder="------"
-        //       />
-        //       <button className="btn">NEXT</button>
-        //     </div>
-        //     <h4>{this.state.otp}</h4>
-        //   </div>
-        // );
+      
   }
 }
