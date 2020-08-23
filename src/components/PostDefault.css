@@ -1,0 +1,52 @@
+.mainPostDefault{
+    /* border: solid 1px silver; */
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width:100%;
+    padding-right: 40px;
+    padding-left:  40px;
+    border-radius: 10px;
+    background-color:#E4FDE1;
+    -webkit-box-shadow: 0px 0px 15px -7px rgba(102,102,102,1);
+    -moz-box-shadow: 0px 0px 15px -7px rgba(102,102,102,1);
+     box-shadow: 0px 0px 15px -7px rgba(102,102,102,1);
+}
+
+.askButton{
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    width: 40%;
+    height: 25px;
+    margin-bottom:10px;
+}
+
+
+.topPart{
+  padding-bottom:50px;
+  border-bottom:solid 2px silver;
+    
+}
+.bottomPart{
+    padding-top: 15px;
+}
+
+.postDefaultHeader h1{
+    font-weight: 800;
+    font-size:42px;
+    color:rgb(49, 49, 49);
+    padding-right: 40px;
+    padding-top: 36px;
+    font-family:  Montserrat, sans-serif;
+}
+
+.bottomPartHeader h2{
+    font-weight: 600;
+    color:rgb(49, 49, 49);
+    font-family:  Montserrat, sans-serif;
+}
+
+
+.row{
+    padding-bottom: 20px;
+}

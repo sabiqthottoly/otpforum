@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import PhoneNo from './PhoneNo'
 import Otp from './otpPage'
+import Homepage from "../Pages/Homepage";
+
+
+import Postcard from "./Postcard";
+import PostContextProvider from "../context/PostContext";
 
 export default class form extends Component {
   
   state = {
     phoneNumber: "+91 ",
     otp: "",
-    step:1
+    step:3
   };
 
   nextPage = () => {
@@ -40,13 +45,14 @@ export default class form extends Component {
         )
       //otp page
       case 2:
-        return <Otp
+        return (<Otp
             otp={this.state.otp}
             nextPage={ () => this.nextPage() }
             storeInput={this.storeInput}
             phoneNumber={this.state.phoneNumber}
-         />
-
+         />)
+      case 3:
+        return(<PostContextProvider><Homepage/></PostContextProvider> )
       }
       
   }
