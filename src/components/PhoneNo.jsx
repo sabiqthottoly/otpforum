@@ -7,9 +7,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 const buttonStyle = { }
  
 export default class PhoneNo extends Component {
-   
-    
-    
  render() {
     const{values,storeInput}=this.props
 

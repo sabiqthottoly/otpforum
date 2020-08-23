@@ -1,13 +1,11 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 import PhoneNo from './PhoneNo'
 import './otpPage.css';
 import {Button,Input} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class otpPage extends PhoneNo {
-  
-    
     render() {
         return (
             <div className="mainOtp">

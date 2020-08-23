@@ -1,6 +1,12 @@
 import React from 'react'
 import { Avatar } from '@material-ui/core';
-import { ListGroup, ListGroupItem,Container, Row, Col } from 'reactstrap';
+import {
+    ListGroupItem,
+    Row,
+    // ListGroup,
+    // Container,
+    // Col
+} from 'reactstrap';
 import './Profiledetails.css'
 export default function ProfileDetails() {
     return (
