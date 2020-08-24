@@ -6,7 +6,7 @@ import Postcard from '../components/Postcard';
 import { Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Categories from '../components/Categories';
 import PostDefault from '../components/PostDefault';
-import PostContextProvider, { PostContext } from '../context/PostContext';
+import { PostsContext, PostsDispatchContext } from '../context/PostContext';
 import ProfileDetails from '../components/Profiledetails';
 import Header from '../components/Header';
 
@@ -21,33 +21,40 @@ function Homepage() {
     //             id:doc.id}     ) ))
     //      })
     //  })
-    
-    const { posts } = useContext(PostContext);
-    console.log(posts)
+
+    const posts = useContext(PostsContext);
+
     return (
         <div className="homePage">
             <div className="homepageheader" >
-               <Header/>
+                <Header />
             </div>
 
             <div className="containerTop">
 
 
-   {/* CATEGORIES LAYOUT */}
-   <div className="categoriesLayout">
+                {/* CATEGORIES LAYOUT */}
+                <div className="categoriesLayout">
                     <Categories />
                 </div>
-               
-   {/* //POST CARD LAYOUT                 */}
-                  {/* postDefault */}
+
+                {/* //POST CARD LAYOUT                 */}
+                {/* postDefault */}
                 <div className="postLayout">
                     <div className="postDefault">
                         <PostDefault />
                     </div>
+<<<<<<< HEAD
                         <div>
                             <Postcard />
                             {/* { posts.map((post) => (<Postcard userName={post.userName}/>))} */}
                         </div>
+=======
+
+                    <Postcard posts={posts} />
+
+                    {/* { posts.map((post) => (<Postcard userName={post.userName}/>))} */}
+>>>>>>> a4376a38cf978b2ca0b45d0f47957b7c0d6cab78
                     {/* new question */}
                     {/* <div><Button color="primary" style={{borderRadius : '50px'}} className="newQuestionButton">NEW QUESTIONS</Button></div> */}
                     {/* {
@@ -76,7 +83,7 @@ function Homepage() {
                 <div className="ProfileDetails">
                     <ProfileDetails />
                 </div>
-                
+
             </div>
         </div>
     )

@@ -1,7 +1,9 @@
-import React, { createContext, Component } from "react";
+import React, { createContext, useState } from "react";
 
-export const PostContext = createContext();
+const PostsContext = createContext(undefined);
+const PostsDispatchContext = createContext(undefined);
 
+<<<<<<< HEAD
 class PostContextProvider extends Component {
   state = {
     posts: [
@@ -33,16 +35,35 @@ class PostContextProvider extends Component {
       console.log(...this.state);
     });
   };
+=======
+let dummyPosts = [
+  {
+    userName: "Sabiq-thottoly",
+    postQuestion: "question will be here? ",
+    postOptions: ["1", "2", "3", "4"],
+    isDeleted: true,
+  },
+  {
+    userName: "Jasir@Jamal",
+    postQuestion: "question will be here? ",
+    postOptions: ["1", "2", "3", "4"],
+    isDeleted: false,
+  },
+]
 
-  render() {
-    return (
-      <PostContext.Provider
-        value={{ ...this.state, addNewPost: this.addNewPost }}
-      >
-        {this.props.children}
-      </PostContext.Provider>
-    );
-  }
+function PostContextProvider({ children }) {
+
+  const [posts, addNewPost] = useState(dummyPosts)
+
+  return (
+    <PostsContext.Provider value={posts}>
+      <PostsDispatchContext.Provider value={addNewPost}>
+        {children}
+      </PostsDispatchContext.Provider>
+    </PostsContext.Provider>
+  )
+>>>>>>> a4376a38cf978b2ca0b45d0f47957b7c0d6cab78
+
 }
 
-export default PostContextProvider;
+export { PostContextProvider, PostsContext, PostsDispatchContext };
