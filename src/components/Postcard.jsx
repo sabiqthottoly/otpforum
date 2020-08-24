@@ -2,7 +2,7 @@ import React, { Component,useContext } from 'react'
 import { Avatar } from '@material-ui/core';
 import {Input , Card, CardImg, CardText, CardBody,CardTitle, CardSubtitle, Button} from 'reactstrap';
 import './Postcard.css'  
-import { PostContext } from '../context/PostContext';
+import { PostGlobalContext } from '../context/PostGlobalContext';
   
 
 //export default class Postcard extends Component {
@@ -10,7 +10,7 @@ import { PostContext } from '../context/PostContext';
      function Postcard() {
 
         console.log("PostCard")
-        const {posts} = useContext(PostContext);
+        const {posts} = useContext(PostGlobalContext);
         console.log(posts)    
         
         let arrayOfUsers = []

@@ -44,12 +44,10 @@ function Homepage() {
                     <div className="postDefault">
                         <PostDefault />
                     </div>
-                    <PostContextProvider>
                         <div>
                             <Postcard />
                             {/* { posts.map((post) => (<Postcard userName={post.userName}/>))} */}
                         </div>
-                    </PostContextProvider>
                     {/* new question */}
                     {/* <div><Button color="primary" style={{borderRadius : '50px'}} className="newQuestionButton">NEW QUESTIONS</Button></div> */}
                     {/* {

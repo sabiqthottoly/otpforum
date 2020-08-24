@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import { Button, Row, Col,Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Modal, ModalHeader, ModalBody, ModalFooter   } from 'reactstrap';
 import './PostDefault.css';
 import AskQuestionModal from './AskQuestionModal';
-import PostContextProvider from '../context/PostContext';
+// import PostContextProvider from '../context/PostContext';
+import { PostGlobalContext } from '../context/PostGlobalContext';
 
 export default function PostDefault() {
    
@@ -27,11 +28,14 @@ export default function PostDefault() {
               </div>
                <div className="askButton">
                
-                  <PostContextProvider>
+                  {/* <PostContextProvider> */}
+                 <PostGlobalContextProvider>
 
-                       <AskQuestionModal/>
+                        <AskQuestionModal/>
+
+                 </PostGlobalContextProvider>
                   
-                  </PostContextProvider> 
+                  {/* </PostContextProvider>  */}
                     
                
                </div>

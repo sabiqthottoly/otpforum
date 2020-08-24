@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import {
-  Row,
+   Row,
   Col,
   Input,
   Button,
@@ -10,7 +10,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import "./AskQuestionModal.css";
-import { PostContext } from "../context/PostContext";
+import { PostGlobalContext } from "../context/PostGlobalContext";
 
 function AskQuestionModal(props) {
   const { buttonLabel, className } = props;
@@ -33,7 +33,7 @@ function AskQuestionModal(props) {
     setAsk("shareinfo");
   };
 
-  const { posts, addNewPost } = useContext(PostContext);
+  const { posts, addNewPost } = useContext(PostGlobalContext);
   console.log();
 
   return (
@@ -88,7 +88,7 @@ function AskQuestionModal(props) {
               type="textarea"
               name="text"
               className="askInput"
-            />
+            />  
             <Row>
               <Col>
                 <li>

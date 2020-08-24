@@ -16,7 +16,7 @@ class PostContextProvider extends Component {
         postQuestion: "question will be here? ",
         postOptions: ["1", "2", "3", "4"],
         isDeleted: false,
-      },
+      }
     ],
   };
 
@@ -24,13 +24,13 @@ class PostContextProvider extends Component {
     console.log(postQuestion);
     let postNew = {
       userName: "Hisham",
-      postQuestion: postQuestion,
+      postQuestion:postQuestion,
       postOptions: ["1", "2", "3", "4"],
       isDeleted: false,
     };
 
-    this.setState({ posts: this.state.posts.concat([postNew]) }, () => {
-      console.log(this.state.posts);
+    this.setState({...this.state,posts:[{postNew}] }, () => {
+      console.log(...this.state);
     });
   };
 
