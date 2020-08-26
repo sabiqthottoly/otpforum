@@ -17,13 +17,27 @@
 
 .postOptions {
     margin-top:25px;
-    padding: 15px;
+    
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     
 }
 .postContent h4{
     margin-top:20px;
     padding-right: 15px;
 
+}
+
+.options{
+ border:solid 1px gray;
+ width: 100%;
+ padding:10px;
+ background-color:#F4F3EE;
+ 
+ text-align: left;
+}
+
+.options:hover{
+    background:white;
 }

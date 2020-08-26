@@ -5,12 +5,7 @@ import {
 } from 'reactstrap';
 import './PostDefault.css';
 import AskQuestionModal from './AskQuestionModal';
-<<<<<<< HEAD
-// import PostContextProvider from '../context/PostContext';
-import { PostGlobalContext } from '../context/PostGlobalContext';
-=======
 import { PostsDispatchContext } from '../context/PostContext';
->>>>>>> a4376a38cf978b2ca0b45d0f47957b7c0d6cab78
 
 export default function PostDefault() {
 
@@ -28,26 +23,6 @@ export default function PostDefault() {
 
     return (
         <div className="mainPostDefault">
-<<<<<<< HEAD
-           <div className="topPart">
-              <div className="postDefaultHeader">
-                  <h1 >POST YOUR QUESTION HERE</h1>
-              </div>
-               <div className="askButton">
-               
-                  {/* <PostContextProvider> */}
-                 <PostGlobalContextProvider>
-
-                        <AskQuestionModal/>
-
-                 </PostGlobalContextProvider>
-                  
-                  {/* </PostContextProvider>  */}
-                    
-               
-               </div>
-          </div>    
-=======
             <div className="topPart">
                 <div className="postDefaultHeader">
                     <h1 >POST YOUR QUESTION HERE</h1>
@@ -56,7 +31,6 @@ export default function PostDefault() {
                     <AskQuestionModal />
                 </div>
             </div>
->>>>>>> a4376a38cf978b2ca0b45d0f47957b7c0d6cab78
             <div className="bottomPart">
                 <div className="bottomPartHeader"><h2>WANT TO ANSWER SOME QUESTIONS</h2></div>
                 <Row className="row">
